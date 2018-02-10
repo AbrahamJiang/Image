@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid布局</title>
+</head>
+<style>
+  /*.float {*/
+    /*float: left;*/
+  /*}*/
+
+  body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .border {
+    border: 1px solid black;
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+  }
+  .child_border {
+    display: flex;
+    align-items: flex-end;
+    align-content: center;
+    /*width: 1fr;*/
+    /*height: 90px;*/
+    /*border: 1px dotted black;*/
+    background-color: aqua;
+  }
+
+  .title {
+    width: 300px; height: 50px; text-align: center; display: flex; align-items: flex-end; align-content: center; font-size: 18px;
+  }
+
+  .container1 {
+    /*justify-items: stretch;*/
+    /*align-items: stretch;*/
+    /*grid-column-gap: 10px;*/
+    /*grid-row-gap: 30px;*/
+    /*width: 800px;*/
+    /*height: 400px;*/
+    /*grid-template-columns: 1fr 2fr 1fr;*/
+    /*!*grid-template-rows: 1fr 2fr 3fr;*!*/
+    /*grid-template-columns: 100px 200px 100px;*/
+    /*grid-template-rows: 80px 70px 130px;*/
+    /*!*grid-template-areas: "header header header" "main main .";*!*/
+    /*!*grid-row-gap: 30px;*!*/
+    /*!*grid-column-gap: 10px;*!*/
+    /*grid-gap: 3px 3px;*/
+    /*justify-items: center;*/
+    /*align-items: stretch;*/
+    align-content: start;
+    /*align-content: start;*/
+    /*!*grid-auto-columns: 60px;*!*/
+    /*!*grid-auto-rows: 60px;*!*/
+    /*float: right;*/
+  }
+  .container2 {
+    align-content: center;
+  }
+  .container3 {
+    align-content: end;
+  }
+  .container4 {
+    align-content: stretch;
+  }
+  .container5 {
+    align-content: space-around;
+  }
+  .container6 {
+    align-content: space-between;
+  }
+  .container7 {
+    align-content: space-evenly;
+  }
+
+  /* grid-column 和 grid-row 用于定位网格项，会打乱内部网格的顺序。4/5表示在第四条和第五条网格线之间 */
+  /* 如果设置grid-row为2/3时，不设置grid-column, 则grid-column默认值为1/2 */
+  /* 如果设置grid-column，但不设置grid-row时，当前元素会向后顺延寻找符合grid-column值的位置，同时之后的元素始终列于当前元素之后（不会乱序） */
+  /*.item1 {*/
+    /*!*grid-area: header;*!*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+    /*!*grid-column: 2/3;*!*/
+    /*!*grid-row: 1/2;*!*/
+  /*}*/
+
+  /*.item2 {*/
+    /*!*grid-area: header;*!*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+    /*!*grid-column: 6/7;*!*/
+    /*!*grid-row: 3/4;*!*/
+  /*}*/
+
+  /*.item3 {*/
+    /*!*grid-area: header;*!*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+  /*}*/
+
+  /*.item4 {*/
+    /*!*grid-area: main;*!*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+  /*}*/
+
+  /*.item5 {*/
+    /*!*grid-area: main;*!*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+    /*grid-column: 1/2;*/
+  /*}*/
+
+  /*.item6 {*/
+    /*!*grid-area: sidebar;*!*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+  /*}*/
+
+  /*.item7 {*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*background-color: gray;*/
+  /*}*/
+
+  /*.item8 {*/
+    /*width: 30px;*/
+    /*height: 30px;*/
+    /*background-color: gray;*/
+  /*}*/
+
+  /*.item9 {*/
+    /*!*width: 30px;*!*/
+    /*!*height: 30px;*!*/
+    /*background-color: gray;*/
+    /*justify-self: start;*/
+  /*}*/
+
+</style>
+<body>
+<!--<div style="width: 200px; height: 1px">-->
+<div class="float">
+  <div class="title">
+    align-content: start 居上显示
+  </div>
+  <div class="container1 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+<div class="float">
+  <div class="title">
+    align-content: center 居中显示
+  </div>
+  <div class="container2 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+  <div class="float">
+  <div class="title">
+    align-content: end 居下显示
+  </div>
+  <div class="container3 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+  <div class="float">
+  <div class="title">
+    align-content: stretch 上下拉伸
+  </div>
+  <div class="container4 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+  <div class="float">
+  <div class="title">
+    align-content: space-around 边缘间距为行间距的一半
+  </div>
+  <div class="container5 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+  <div class="float">
+  <div class="title">
+    align-content: space-between 边缘无间距，行间间距均等
+  </div>
+  <div class="container6 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+  <div class="float">
+  <div class="title">
+    align-content: space-evenly 边缘与行间间距均等
+  </div>
+  <div class="container7 border">
+    <div class="child_border item1">
+      item1
+    </div>
+    <div class="child_border item2">
+      item2
+    </div>
+    <div class="child_border item3">
+      item3
+    </div>
+    <div class="child_border item4">
+      item4
+    </div>
+    <div class="child_border item5">
+      item5
+    </div>
+    <div class="child_border item6">
+      item6
+    </div>
+    <div class="child_border item7">
+      item7
+    </div>
+    <div class="child_border item8">
+      item8
+    </div>
+    <div class="child_border item9">
+      item9
+    </div>
+  </div>
+</div>
+
+    <div style="position: absolute; top: 700px"></div>
+
+    <!--<div class="child_border item10">-->
+
+    <!--</div>-->
+    <!--<div class="child_border item11">-->
+
+    <!--</div>-->
+    <!--<div class="child_border item12">-->
+
+    <!--</div>-->
+
+    <!--<div class="child_border item13">-->
+
+    <!--</div>-->
+    <!--<div class="child_border item14">-->
+
+    <!--</div>-->
+    <!--<div class="child_border item15">-->
+
+    <!--</div>-->
+    <!--<div class="child_border item16">-->
+
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>
