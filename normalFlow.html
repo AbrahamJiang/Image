@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文档流</title>
+</head>
+<style>
+  .container {
+    width: 400px;
+    height: 700px;
+    position: relative;
+    border: 1px dotted black;
+  }
+
+  .float_box1 {
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+    /*float: left;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+  }
+
+  .float_box2 {
+    width: 150px;
+    height: 150px;
+    background-color: chartreuse;
+    /*float: left;*/
+    position: relative;
+    top: 50px;
+    left: 30px;
+  }
+
+  .float_box3 {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    /*float: left;*/
+    /*position: relative;*/
+  }
+
+  .p_text_color {
+    /*display: block;*/
+    color: orange;
+  }
+</style>
+<body>
+  <div class="container">
+
+    <div class="float_box1"></div>
+    <div class="float_box2"></div>
+    <!--<div class="float_box3"></div>-->
+
+    <p class="p_text_color">p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字p标签中的文字</p>
+    这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+    这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+    这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+    这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字
+  </div>
+</body>
+</html>
